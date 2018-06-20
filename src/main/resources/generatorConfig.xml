@@ -2,45 +2,41 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-    <classPathEntry location="/media/alan/Data/ehu社区/maven/repo/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>
+    <!--<classPathEntry location="/media/alan/Data/ehu社区/maven/repo/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>-->
     <context id="context1" targetRuntime="MyBatis3">
-        <commentGenerator type="config.MybatisCommentGenerator">
+        <plugin type="org.mybatis.generator.plugins.Java8Plugin"/>
+        <!--<commentGenerator type="config.MybatisCommentGenerator">-->
+        <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="false"/>
             <property name="addRemarkComments" value="true"/>
             <property name="suppressDate" value="false"/>
             <property name="author" value="AlanSun"/>
         </commentGenerator>
+        <JDK type="jdk8"></JDK>
 
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu?useUnicode=true&amp;characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_bbs?useUnicode=true&amp;characterEncoding=UTF-8"
                         userId="root" password="eHu2016">
             <!-- 针对mysql数据库 -->
             <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.ehu.model.order"
+        <javaModelGenerator targetPackage="com.ehu.model.goods"
                             targetProject="./src/main/java"/>
 
         <sqlMapGenerator targetPackage="."
-                         targetProject="./src/main/resources/mapper/order"/>
+                         targetProject="./src/main/resources/mapper/goods"/>
 
-        <javaClientGenerator targetPackage="com.ehu.dao.order"
+        <javaClientGenerator targetPackage="com.ehu.mapper"
                              targetProject="./src/main/java"
                              type="XMLMAPPER"/>
 
-        <table schema="ehu" tableName="t_second_hand_order" domainObjectName="SecondHandOrder"
-               enableCountByExample="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false">
-        </table>
-
-        <table schema="ehu" tableName="t_second_hand_order_detail" domainObjectName="SecondHandOrderDetail"
-               enableCountByExample="true" enableDeleteByExample="false" enableDeleteByPrimaryKey="false">
-        </table>
-
-        <table schema="ehu" tableName="t_second_hand_order_status" domainObjectName="SecondHandOrderStatus"
-               enableCountByExample="true" enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
-               enableUpdateByExample="false" enableUpdateByPrimaryKey="false">
+        <table schema="ehu_bbs." tableName="forum_goods" domainObjectName="ForumGoods"
+               enableCountByExample="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true">
+            <generatedKey column="goods_id" sqlStatement="JDBC" identity="true"/>
         </table>
 
     </context>
