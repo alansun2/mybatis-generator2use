@@ -14,27 +14,32 @@
             <property name="author" value="AlanSun"/>
         </commentGenerator>
 
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+        <!--connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_bbs?useUnicode=true&amp;characterEncoding=UTF-8"-->
+        <!--userId="root" password="eHu2016">-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_bbs?useUnicode=true&amp;characterEncoding=UTF-8"
-                        userId="root" password="eHu2016">
+                        connectionURL="jdbc:mysql://47.95:3306/tj-core?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="wanzhi201an888">
             <!-- 针对mysql数据库 -->
             <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.ehu.model.goods"
+        <javaModelGenerator targetPackage="com.ehu.bean.model"
                             targetProject="./src/main/java"/>
 
         <sqlMapGenerator targetPackage="."
-                         targetProject="./src/main/resources/mapper/goods"/>
+                         targetProject="./src/main/resources/mapper"/>
 
-        <javaClientGenerator targetPackage="com.ehu.mapper"
+        <javaClientGenerator targetPackage="com.ehu.dao.mapper"
                              targetProject="./src/main/java"
                              type="XMLMAPPER"/>
 
-        <table schema="ehu_bbs." tableName="forum_goods" domainObjectName="ForumGoods"
+        <table schema="ehu." tableName="t_user_recive_address" domainObjectName="UserReciveAddress"
                enableCountByExample="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
-               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true">
-            <generatedKey column="goods_id" sqlStatement="JDBC" identity="true"/>
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="_id" sqlStatement="JDBC" identity="true"/>
         </table>
 
     </context>
