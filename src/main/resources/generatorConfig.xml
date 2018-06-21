@@ -13,8 +13,6 @@
             <property name="suppressDate" value="false"/>
             <property name="author" value="AlanSun"/>
         </commentGenerator>
-        <JDK type="jdk8"></JDK>
-
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_bbs?useUnicode=true&amp;characterEncoding=UTF-8"
