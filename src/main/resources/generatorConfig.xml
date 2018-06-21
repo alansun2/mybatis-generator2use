@@ -15,8 +15,8 @@
         </commentGenerator>
 
         <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
-        <!--connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_bbs?useUnicode=true&amp;characterEncoding=UTF-8"-->
-        <!--userId="root" password="eHu2016">-->
+        <!--connectionURL="jdbc:mysql://test.eh:3306/ehus?useUnicode=true&amp;characterEncoding=UTF-8"-->
+        <!--userId="root" password="">-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://47.95:3306/tj-core?useUnicode=true&amp;characterEncoding=UTF-8"
                         userId="root" password="wanzhi201an888">
