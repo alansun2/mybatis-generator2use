@@ -14,12 +14,9 @@
             <property name="author" value="AlanSun"/>
         </commentGenerator>
 
-        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
-        <!--connectionURL="jdbc:mysql://test.eh:3306/ehus?useUnicode=true&amp;characterEncoding=UTF-8"-->
-        <!--userId="root" password="">-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://47.95:3306/tj-core?useUnicode=true&amp;characterEncoding=UTF-8"
-                        userId="root" password="wanzhi201an888">
+                        connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_group_buy?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="eHu2016">
             <!-- 针对mysql数据库 -->
             <property name="useInformationSchema" value="true"/>
         </jdbcConnection>
@@ -30,17 +27,119 @@
         <sqlMapGenerator targetPackage="."
                          targetProject="./src/main/resources/mapper"/>
 
-        <javaClientGenerator targetPackage="com.ehu.dao.mapper"
+        <javaClientGenerator targetPackage="com.ehu.mapper"
                              targetProject="./src/main/java"
                              type="XMLMAPPER"/>
 
-        <table schema="ehu." tableName="t_user_recive_address" domainObjectName="UserReciveAddress"
-               enableCountByExample="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+        <!--<table schema="ehu." tableName="t_user_recive_address" domainObjectName="UserReciveAddress"-->
+        <!--enableCountByExample="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false"-->
+        <!--enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"-->
+        <!--enableSelectByExample="true"-->
+        <!--enableSelectByPrimaryKey="true">-->
+        <!--<generatedKey column="_id" sqlStatement="JDBC" identity="true"/>-->
+        <!--</table>-->
+
+        <table schema="ehu_group_buy." tableName="group_info" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
                enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
                enableSelectByExample="true"
                enableSelectByPrimaryKey="true">
-            <generatedKey column="_id" sqlStatement="JDBC" identity="true"/>
+            <generatedKey column="group_id" sqlStatement="JDBC" identity="true"/>
         </table>
-
+        <table schema="ehu_group_buy." tableName="merchant_account" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="merchant_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_goods" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="goods_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_goods_detail" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="detail_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_goods_img" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="img_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_info" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="merchant_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_user" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="uid" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="merchant_withdraw_record" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="record_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="message" enableCountByExample="false" enableDeleteByPrimaryKey="false"
+               enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="message_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="order_code" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+        </table>
+        <table schema="ehu_group_buy." tableName="order_info" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+        </table>
+        <table schema="ehu_group_buy." tableName="order_state" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="state_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="store_label" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="label_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="user" enableCountByExample="false" enableDeleteByPrimaryKey="false"
+               enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+            <generatedKey column="user_id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table schema="ehu_group_buy." tableName="user_collection" enableCountByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="true" enableInsert="true"
+               enableSelectByExample="true"
+               enableSelectByPrimaryKey="true">
+        </table>
     </context>
 </generatorConfiguration>
