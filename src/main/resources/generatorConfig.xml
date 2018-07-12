@@ -15,7 +15,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://test.ehoo100.com:3306/ehu_group_buy?useUnicode=true&amp;characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://tes.com:3306/ehu_group_buy?useUnicode=true&amp;characterEncoding=UTF-8"
                         userId="root" password="eHu2016">
             <!-- 针对mysql数据库 -->
             <property name="useInformationSchema" value="true"/>
